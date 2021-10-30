@@ -1,8 +1,8 @@
 ##
-## EPITECH PROJECT, 2021
-## Final stumper
+## DENITEK PROJECT, 2021
+## Power strike
 ## File description:
-## Compile final stumper program
+## Compile PowerStrike lib & example
 ##
 
 SRC =   ./main.c \
@@ -12,22 +12,22 @@ SRC =   ./main.c \
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS += -I./include -W -Wextra -Wall -Werror -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+CFLAGS += -I./include # -W -Wextra -Wall -Werror
 
 NAME = game
 
 $(NAME): $(OBJ)
-	make -C lib/my
-	gcc -o $(NAME) $(OBJ) -I./include -L./lib
+#	make -C lib/my
+	gcc -o $(NAME) $(OBJ) -I./include -L./lib -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window 
 
 all:	 $(NAME)
 
 clean:
-	make clean -C lib/my
+#	make clean -C lib/my
 	rm -f $(OBJ)
 
 fclean: clean
-	make clean -C lib/my
+#	make clean -C lib/my
 	rm -f $(NAME)
 
 re: 	fclean all
